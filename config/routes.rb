@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :faqs
   root 'homes#index'
   devise_for :user
   # The priority is based upon order of creation: first created -> highest priority.

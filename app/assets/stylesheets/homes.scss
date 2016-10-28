@@ -17,3 +17,25 @@
   height: 180px;
   margin-top: 20px;
 }
+
+#bgvid{
+  position: absolute;
+  width: 100%;
+}
+
+#polina{
+display: block;
+width: 60px;
+padding: .4rem;
+border: none;
+font-size: 1.3rem;
+background: rgba(255,255,255,0.23);
+color: #fff;
+border-radius: 3px;
+cursor: pointer;
+transition: .3s background;
+}
+
+#polina:hover {
+ background: rgba(0,0,0,0.5);
+}
