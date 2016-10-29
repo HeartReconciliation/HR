@@ -11,6 +11,7 @@ class FaqsController < ApplicationController
   # GET /faqs/1
   # GET /faqs/1.json
   def show
+    redirect_to faqs_path, notice: 'Prohibited'
   end
 
   # GET /faqs/new
@@ -29,7 +30,7 @@ class FaqsController < ApplicationController
 
     respond_to do |format|
       if @faq.save
-        format.html { redirect_to @faq, notice: 'Faq was successfully created.' }
+        format.html { redirect_to faqs_path, notice: 'Your question was successfully sumbitted and will be updated soon'}
         format.json { render :show, status: :created, location: @faq }
       else
         format.html { render :new }
