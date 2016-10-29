@@ -23,3 +23,51 @@
 <br>
 
 <%= link_to 'New Faq', new_faq_path %> -->
+
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="cssf/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="cssf/style.css"> <!-- Resource style -->
+	<script src="jsf/modernizr.js"></script> <!-- Modernizr -->
+	<title>FAQ</title>
+</head>
+<body>
+<header>
+	<h1>FAQ</h1>
+</header>
+<section class="cd-faq">
+  <%= link_to "Ask a Question", new_faq_path%><br><br>
+	<%= link_to " Home", root_path%>
+	<div class="cd-faq-items">
+		<ul id="basics" class="cd-faq-group">
+      <% @faqs.each do |f| %>
+      <li><% if current_user.admin%>
+				<%= link_to f,method: :delete, data: { confirm: 'Are you sure?' } do %>
+				<i class="glyphicon glyphicon-remove pull-right"></i>
+				<% end %>
+      <% end %>
+        <a class="cd-faq-trigger" href="#0"><%= f.question %></a>
+        <div class="cd-faq-content">
+          <p><%= f.answer %> %></p>
+        </div>
+				<% if current_user.admin%>
+	      	<%= link_to "Edit", edit_faq_path(f)%>
+	      <% end %>
+				 <!-- cd-faq-content -->
+      </li>
+      <% end %>
+		</ul> <!-- cd-faq-group -->
+
+</div> <!-- cd-faq-items -->
+	<a href="#0" class="cd-close-panel">Close</a>
+</section> <!-- cd-faq -->
+<script src="jsf/jquery-2.1.1.js"></script>
+<script src="jsf/jquery.mobile.custom.min.js"></script>
+<script src="jsf/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
