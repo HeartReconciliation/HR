@@ -46,25 +46,38 @@
 	<div class="cd-faq-items">
 		<ul id="basics" class="cd-faq-group">
       <% @faqs.each do |f| %>
-      <li>
-				<% if user_signed_in? %>
-				<% if current_user.admin%>
-				<%= link_to f,method: :delete, data: { confirm: 'Are you sure?' } do %>
-				<i class="glyphicon glyphicon-remove pull-right"></i>
+			<% if user_signed_in? %>
+			  <% if current_user.admin %>
+				<li>
+					<%= link_to f, method: :delete, data: { confirm: 'Are you sure?' } do %>
+					<i class="glyphicon glyphicon-remove"></i>
+					<% end %>
+					<a class="cd-faq-trigger" href="#0"><%= f.question %></a>
+					<div class="cd-faq-content">
+						<p><%= f.answer %></p>
+					</div>
+						<%= link_to "Edit", edit_faq_path(f)%>
+				</li>
+					<% else %>
+					<% if f.answer? %>
+					<li>
+						<a class="cd-faq-trigger" href="#0"><%= f.question %></a>
+						<div class="cd-faq-content">
+							<p><%= f.answer %></p>
+						</div>
+					</li>
+					<% end %>
+			  <% end %>
+				<% else %>
+				<% if f.answer? %>
+				<li>
+					<a class="cd-faq-trigger" href="#0"><%= f.question %></a>
+					<div class="cd-faq-content">
+						<p><%= f.answer %></p>
+					</div>
+				</li>
 				<% end %>
-				<% end %>
-      <% end %>
-        <a class="cd-faq-trigger" href="#0"><%= f.question %></a>
-        <div class="cd-faq-content">
-          <p><%= f.answer %></p>
-        </div>
-					<% if user_signed_in? %>
-				<% if current_user.admin%>
-	      	<%= link_to "Edit", edit_faq_path(f)%>
-	      <% end %>
-				<% end %>
-				 <!-- cd-faq-content -->
-      </li>
+			<% end %>
       <% end %>
 		</ul> <!-- cd-faq-group -->
 
