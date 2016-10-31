@@ -2,6 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.happycust{
+  background-color: #d6e5e2;
+}
+
+.ci{
+  vertical-align: top !important;
+  padding-top: 200px;
+}
+
+.tlt{
+  line-height: 1;
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+}
+.tlt-2{
+  line-height: 1;
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+
+}
+.tlt-3{
+  line-height: 1;
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+
+}
 .get-btn{
   color: white !important;
   border-radius: 100px !important;
@@ -25,12 +51,13 @@ padding-right: 5%;
 
 .baj-img{
   position: absolute;
-  width: 10%;
+  width: 15%;
 }
 .custom-nav{
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  margin-top: 40px;
 }
 
 .l-nav li a{
@@ -38,21 +65,6 @@ padding-right: 5%;
   font-weight: bold;
 }
 
-@media (max-width: 990px) {
-.l-nav li{
-  padding-right:0;
-}
-.l-nav{
-padding-left: 20% !important;
-width: 63%;
-}
-}
-
-@media (max-width: 768px) {
-.baj-img{
-  width: 30%;
-}
-}
 
 // .navbar .navbar-nav {
 //   display: inline-block;
@@ -132,3 +144,37 @@ transition: .3s background;
 }
 
 /***************************/
+
+/*Media Queries*/
+
+@media (max-width: 990px) {
+.l-nav li{
+  padding-right:0;
+}
+.l-nav{
+padding-left: 20% !important;
+width: 63%;
+}
+.tlt{
+  line-height: 1;
+  font-size: 20px;
+}
+.tlt-2{
+  line-height: 1;
+  font-size: 20px;
+}
+.tlt-3{
+  line-height: 1;
+  font-size: 20px;
+}
+}
+
+@media (max-width: 768px) {
+.baj-img{
+  width: 30%;
+}
+.bj-img{
+  width: 300px !important;
+  height: 300px !important;
+}
+}

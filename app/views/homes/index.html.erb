@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Benandjess</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="Reconciling your past to release your future" />
 	<meta name="keywords" content="Heart Reconciliation reconcilers inner healing " />
 
@@ -33,11 +33,17 @@
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
 	<!-- Bootstrap  -->
 	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 
 	<!-- Cards -->
 	<link rel="stylesheet" href="css/cards.css">
+	<script src="js/jquery.lettering-0.6.1.min.js">
+
+	</script>
+	<script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -144,19 +150,33 @@
 		</div> -->
 		<div class="fh5co-cover" data-next="yes"  style="background-color:#d6e5e2;">
 		  	<span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
-				<!-- <img src="images/bj.JPG" class="img-circle bj-img"> -->
+				<img src="images/bj.JPG" class="img-circle bj-img">
 			</span>
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-cover-text">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-push-2 col-md-6 full-height js-full-height">
-							<div class="fh5co-cover-intro">
+						<div class="col-md-12 full-height js-full-height">
+							<div class="fh5co-cover-intro ci">
 								<p class="tlt">
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+									When I first met Ben and Jess I felt so lost.  I wondered if I was a dud, someone who just would never “get it”.
+									I came away from my time with them feeling so alive, so found, so full of hope.
+									The tools they gave me have served me well in the 6 years since we met, and I will remember that time for the rest of my life.
+								</p>
+								<br>
+								<p class="tlt-2">
+									Having trained as a counsellor and studied psychology I was very impressed with Ben and the approach taken,
+									pinpointing clear fractures in my heart and mind and reintegrating them with profound effects, in the very first session.
+									Ben has real intuitive insight, and I would highly recommend having sessions with him. Excellent work Ben and genuinely appreciated.
+								</p>
+								<br>
+								<p class="tlt-3">
+									Your life is a tale of triumph through adversity, Just because your down doesn't mean you won't get up. Ben and Jess are here to help you find the path before you and pick you up to walk in it.
 								</p>
 								<script type="text/javascript">
 								$('.tlt').textillate({ in: { effect: 'rollIn' } });
+								$('.tlt-2').textillate({ in: { effect: 'fadeInLeftBig' } });
+								$('.tlt-3').hide().show(10000).textillate({ in: { effect: 'tada' } });
 								</script>
 							</div>
 						</div>
@@ -164,10 +184,54 @@
 				</div>
 			</div>
 		</div>
-
-
-
+<br><br><br><br>
 		<div class="fh5co-testimonial-style-2">
+		  <div class="container">
+		    <div class="row p-b">
+		      <div class="col-md-6 col-md-offset-3 text-center">
+		        <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">About us</h2>
+		      </div>
+		    </div>
+		    <div class="row">
+					<p>
+						Jess and I Love people, and we hate seeing people suffer so unnecessarily. Since losing two friends who took their lives in 2007.
+						I (Ben) have learnt how to bind up the brokenhearted and set captives free. Now we do what we love for our Job.
+						The result is that powerlessness and pain get removed. So that times of refreshing can come from your Lord.
+					</p>
+					<p>
+						Between 2007 and 2010 I (Ben) worked in the Transformation Centre at Bethel Church in Redding California.
+						Now we are based in Tauranga New Zealand where we devote our time to helping individuals
+						and couples find more joy and meaning in their lives. While also training counsellors in the ways of the heart.
+						<button id="more" class="btn btn-link">More</button>
+					</p>
+					<p class="hp">
+						Jess and I Love people, and we hate seeing people suffer so unnecessarily. Since losing two friends who took their lives in 2007.
+						I (Ben) have learnt how to bind up the brokenhearted and set captives free. Now we do what we love for our Job.
+						The result is that powerlessness and pain get removed. So that times of refreshing can come from your Lord.
+						Jess and I Love people, and we hate seeing people suffer so unnecessarily. Since losing two friends who took their lives in 2007.
+						I (Ben) have learnt how to bind up the brokenhearted and set captives free. Now we do what we love for our Job.
+						The result is that powerlessness and pain get removed. So that times of refreshing can come from your Lord.
+						<button id="less" class="btn btn-link">Less</button>
+					</p>
+		    </div>
+		  </div>
+		</div>
+		<script type="text/javascript">
+			$(".hp").hide();
+			$("#less").hide();
+			$("#more").click(function() {
+				$(".hp").show();
+				$("#less").show();
+				$(this).hide();
+			});
+			$("#less").click(function() {
+				$(".hp").hide();
+				$("#more").show();
+				$(this).hide();
+			});
+		</script>
+
+		<div class="fh5co-testimonial-style-2 happycust">
 			<div class="container">
 				<div class="row p-b">
 					<div class="col-md-6 col-md-offset-3 text-center">
