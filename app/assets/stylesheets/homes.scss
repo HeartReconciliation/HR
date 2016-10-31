@@ -2,6 +2,93 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.get-btn{
+  color: white !important;
+  border-radius: 100px !important;
+  padding: 10px !important;
+  margin-top: 2px;
+}
+
+.login-btn{
+  color: black !important;
+  font-weight: bold;
+}
+
+.l-nav{
+padding-left: 30% !important;
+width: 72%;
+}
+
+.l-nav li{
+padding-right: 5%;
+}
+
+.baj-img{
+  position: absolute;
+  width: 10%;
+}
+.custom-nav{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.l-nav li a{
+  color: black !important;
+  font-weight: bold;
+}
+
+@media (max-width: 990px) {
+.l-nav li{
+  padding-right:0;
+}
+.l-nav{
+padding-left: 20% !important;
+width: 63%;
+}
+}
+
+@media (max-width: 768px) {
+.baj-img{
+  width: 30%;
+}
+}
+
+// .navbar .navbar-nav {
+//   display: inline-block;
+//   float: none;
+//   vertical-align: top;
+// }
+
+.bj-img{
+position: relative;
+width: 400px;
+height: 400px;
+top: 160px;
+}
+
+.gtb{
+  margin-top: 4px;
+  border: 2px solid #58ca7e;
+  background: #58ca7e;
+  padding: 6px 15px !important;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.gtb:hover{
+  color: #fff;
+  border: 2px solid #45c46f;
+  background: #45c46f;
+}
+
 #btnd{
   background-color: #ff4d4d;
   border: 2px solid #ff4d4d;
@@ -39,3 +126,9 @@ transition: .3s background;
 #polina:hover {
  background: rgba(0,0,0,0.5);
 }
+
+.turnblack li a{
+  color: black !important;
+}
+
+/***************************/
