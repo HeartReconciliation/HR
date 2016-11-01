@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*Faq*/
+.faqHeader {
+    font-size: 27px;
+    margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+    font-family: 'Glyphicons Halflings';
+    content: "e072"; /* "play" icon */
+    float: right;
+    color: #F58723;
+    font-size: 18px;
+    line-height: 22px;
+    /* rotate "play" icon from > (right arrow) to down arrow */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+    /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: #454444;
+}
+/********************************/
+
+.pad{
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
 .turngreenback{
       background-color: #d6e5e2 !important;
       color: black !important;
@@ -36,10 +73,16 @@
 
 }
 .get-btn{
+  background-color: #DA6E5B;
   color: white !important;
   border-radius: 100px !important;
   padding: 10px !important;
   margin-top: 2px;
+}
+
+.get-btn:hover{
+  background-color: #c46351 !important;
+  color: white !important;
 }
 
 .login-btn{
