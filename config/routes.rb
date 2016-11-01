@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'adminpanel/index'
+
   resources :faqs
   root 'homes#index'
   devise_for :user

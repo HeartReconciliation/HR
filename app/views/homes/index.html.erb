@@ -102,15 +102,21 @@
 	        <li><a href="#">Tour</a></li>
 	        <li><a href="#">Blog</a></li>
 					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Explore</a></li>
+					<% if user_signed_in? %>
+					  <% if current_user.admin %>
+					    	<li><%= link_to "Admin",adminpanel_index_path%></li>
+					  <% end %>
+						<% else %>
+							<li><a href="#">Explore</a></li>
+					<% end %>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 					<% if user_signed_in? %>
-					<li><%= link_to "Login",new_user_session_path, class:"login-btn"%></li>
-					<li><%= link_to "Log Out",destroy_user_session_path,class: "btn btn-danger get-btn",id: "btnd",method: :delete%></li>
+					<li><%= link_to "Log Out",destroy_user_session_path,class: "login-btn",method: :delete%></li>
+					<li><a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn btn-danger get-btn">Book appointment</a></li>
 					<% else %>
 					<li><%= link_to "Login",new_user_session_path, class:"login-btn"%></li>
-					<li><a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn get-btn">Book appointment</a></li>
+					<li><a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn btn-danger get-btn">Book appointment</a></li>
 					<% end %>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -445,26 +451,38 @@
 
 		<div class="fh5co-features-style-2">
 			<div class="container">
-				<div class="row p-b">
+				<div class="row">
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Faq</h2>
 					</div>
 				</div>
 				<div class="row">
-					<!-- <div class="panel-group" id="accordion">
-		          <div class="panel panel-default">
-		              <div class="panel-heading">
-		                  <h4 class="panel-title">
-		                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is account registration required?</a>
-		                  </h4>
-		              </div>
-		              <div id="collapseOne" class="panel-collapse collapse in">
-		                  <div class="panel-body">
-		                      Account registration at <strong>PrepBootstrap</strong> is only required if you will be selling or buying themes.
-		                      This ensures a valid communication channel for all parties involved in any transactions.
-		                  </div>
-		              </div>
-		          </div> -->
+					<% @faqs.each do |f| %>
+						<div class="panel panel-default">
+						<div class="panel-heading ph"><%= f.question %>
+							<button id="btn-show<%= f.id %>" class="pull-right btn btn-link"><i class="glyphicon glyphicon-chevron-down"></i></button>
+							<button id="btn-hide<%= f.id %>" class="pull-right btn btn-link"><i class="glyphicon glyphicon-chevron-up"></i></button>
+						</div>
+						<div class="panel-body" id="pcont<%= f.id %>">
+							<%= f.answer %>
+						</div>
+						</div>
+						<script type="text/javascript">
+							$("#pcont<%= f.id %>").hide();
+							$("#btn-hide<%= f.id %>").hide();
+							$("#btn-show<%= f.id %>").click(function(){
+								$("#pcont<%= f.id %>").show();
+								$(this).hide();
+								$("#btn-hide<%= f.id %>").show();
+							});
+							$("#btn-hide<%= f.id %>").click(function(){
+								$("#pcont<%= f.id %>").hide();
+								$(this).hide();
+								$("#btn-show<%= f.id %>").show();
+							});
+						</script>
+
+							<% end %>
 				</div>
 			</div>
 		</div>

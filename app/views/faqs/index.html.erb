@@ -24,68 +24,40 @@
 
 <%= link_to 'New Faq', new_faq_path %> -->
 
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<%= render 'layouts/sidenav' %>
+<div class="col-sm-9 col-md-10 affix-content">
+	<div class="container">
+		<br><br>
+		<%= link_to "Add FAQ", new_faq_path, class: "btn btn-primary" %>
+<br><br>
+<% @faqs.each do |f| %>
+	<div class="panel panel-default">
+	<div class="panel-heading"><%= f.question %>
+		<button id="btn-show<%= f.id %>" class="pull-right btn btn-link"><i class="glyphicon glyphicon-chevron-down"></i></button>
+		<button id="btn-hide<%= f.id %>" class="pull-right btn btn-link"><i class="glyphicon glyphicon-chevron-up"></i></button>
+	</div>
+	<div class="panel-body" id="pcont<%= f.id %>">
+		<%= f.answer %>
+	</div>
+	</div>
+	<%= link_to 'Edit', edit_faq_path(f),class: "btn btn-info btn-sm" %>
+	<%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-sm" %>
+	<br><br>
+	<script type="text/javascript">
+		$("#pcont<%= f.id %>").hide();
+		$("#btn-hide<%= f.id %>").hide();
+		$("#btn-show<%= f.id %>").click(function(){
+			$("#pcont<%= f.id %>").show();
+			$(this).hide();
+			$("#btn-hide<%= f.id %>").show();
+		});
+		$("#btn-hide<%= f.id %>").click(function(){
+			$("#pcont<%= f.id %>").hide();
+			$(this).hide();
+			$("#btn-show<%= f.id %>").show();
+		});
+	</script>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="cssf/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="cssf/style.css"> <!-- Resource style -->
-	<script src="jsf/modernizr.js"></script> <!-- Modernizr -->
-	<title>FAQ</title>
-</head>
-<body>
-<header>
-	<h1>FAQ</h1>
-</header>
-<section class="cd-faq">
-  <%= link_to "Ask a Question", new_faq_path%><br><br>
-	<%= link_to " Home", root_path%>
-	<div class="cd-faq-items">
-		<ul id="basics" class="cd-faq-group">
-      <% @faqs.each do |f| %>
-			<% if user_signed_in? %>
-			  <% if current_user.admin %>
-				<li>
-					<%= link_to f, method: :delete, data: { confirm: 'Are you sure?' } do %>
-					<i class="glyphicon glyphicon-remove"></i>
-					<% end %>
-					<a class="cd-faq-trigger" href="#0"><%= f.question %></a>
-					<div class="cd-faq-content">
-						<p><%= f.answer %></p>
-					</div>
-						<%= link_to "Edit", edit_faq_path(f)%>
-				</li>
-					<% else %>
-					<% if f.answer? %>
-					<li>
-						<a class="cd-faq-trigger" href="#0"><%= f.question %></a>
-						<div class="cd-faq-content">
-							<p><%= f.answer %></p>
-						</div>
-					</li>
-					<% end %>
-			  <% end %>
-				<% else %>
-				<% if f.answer? %>
-				<li>
-					<a class="cd-faq-trigger" href="#0"><%= f.question %></a>
-					<div class="cd-faq-content">
-						<p><%= f.answer %></p>
-					</div>
-				</li>
-				<% end %>
-			<% end %>
-      <% end %>
-		</ul> <!-- cd-faq-group -->
-
-</div> <!-- cd-faq-items -->
-	<a href="#0" class="cd-close-panel">Close</a>
-</section> <!-- cd-faq -->
-<script src="jsf/jquery-2.1.1.js"></script>
-<script src="jsf/jquery.mobile.custom.min.js"></script>
-<script src="jsf/main.js"></script> <!-- Resource jQuery -->
-</body>
-</html>
+		<% end %>
+</div>
+</div>
