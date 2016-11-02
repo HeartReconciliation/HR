@@ -246,7 +246,7 @@
 					</div>
 				</div>
 				<div class="row">
-						<% @reviews.each do |r| %>
+						<% @reviews.first(6).each do |r| %>
 					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="fh5co-testimonial-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s">
 							<div class="fh5co-name">
@@ -260,7 +260,7 @@
 								</div>
 							</div>
 							<div class="fh5co-text">
-								<p>&ldquo;<%= truncate(r.review, :length=>200) %>&rdquo;</p>
+								<p>&ldquo;<%= truncate(r.review, :length=>250) %>&rdquo;<a href="#"> Read full review</a></p>
 							</div>
 						</div>
 					</div>
@@ -318,6 +318,11 @@
 
 					<div class="clearfix visible-sm-block"></div> -->
 
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.6s">
+						<a href="#" class="btn btn-success btn-lg">View all</a>
+					</div>
 				</div>
 			</div>
 		</div>
