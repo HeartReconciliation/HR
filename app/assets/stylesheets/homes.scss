@@ -178,6 +178,19 @@ transition: .3s background;
     float: right !important;
   }
 }
+@media (max-width:768px) and (min-width:500px){
+.baj-img{
+    top:5px;
+    width: 175px !important;
+}
+}
+@media(max-width:500px)
+{
+.baj-img{
+    top: 5px;
+}
+}
+
 @media (max-width: 990px) {
 .l-nav li{
   padding-right:0;
@@ -202,7 +215,7 @@ width: 63%;
 
 @media (max-width: 768px) {
 .baj-img{
-  width: 40%;
+  width: 175px;
 }
 .bj-img{
   width: 300px !important;
