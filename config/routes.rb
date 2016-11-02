@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'adminpanel/index'
-
+  resources :reviews
   resources :faqs
   root 'homes#index'
   devise_for :user

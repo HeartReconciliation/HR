@@ -1,6 +1,5 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index]
 
   # GET /faqs
   # GET /faqs.json
@@ -30,7 +29,7 @@ class FaqsController < ApplicationController
 
     respond_to do |format|
       if @faq.save
-        format.html { redirect_to faqs_path, notice: 'Your question was successfully sumbitted and will be updated soon'}
+        format.html { redirect_to faqs_path, notice: 'Faq created'}
         format.json { render :show, status: :created, location: @faq }
       else
         format.html { render :new }

@@ -1,0 +1,17 @@
+<%= render 'layouts/sidenav' %>
+<div class="main">
+	<%= link_to "Add Review", new_review_path, class: "btn btn-primary" %>
+	<br><br>
+<% @reviews.each do |r| %>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= r.name %>
+		<% r.rating.times do  %>
+		<i class="glyphicon glyphicon-star pull-right"></i>
+		<% end %>
+	</div>
+  <div class="panel-body">
+    <%= r.review %>
+  </div>
+</div>
+<% end %>
+</div>

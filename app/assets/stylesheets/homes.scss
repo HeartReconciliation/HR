@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.pull-r{
+  position: absolute;
+}
+
 .ph{
   background: rgb(234, 241, 240) !important;
 }
@@ -168,7 +172,12 @@ transition: .3s background;
 /***************************/
 
 /*Media Queries*/
-
+@media (min-width: 768px) {
+  .pull-r{
+    position: initial;
+    float: right !important;
+  }
+}
 @media (max-width: 990px) {
 .l-nav li{
   padding-right:0;
