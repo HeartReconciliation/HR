@@ -436,10 +436,11 @@
 				</div>
 				<div class="row">
 					<% @faqs.each do |f| %>
+					<div class="col-md-12">
 						<div class="panel panel-default">
 						<div class="panel-heading ph"><%= f.question %>
-							<button id="btn-show<%= f.id %>" class="pull-r btn btn-link"><i class="glyphicon glyphicon-chevron-down"></i></button>
-							<button id="btn-hide<%= f.id %>" class="pull-r btn btn-link"><i class="glyphicon glyphicon-chevron-up"></i></button>
+							<button id="btn-show<%= f.id %>" class="pull-right btn btn-link btn-ar"><i class="glyphicon glyphicon-chevron-down"></i></button>
+							<button id="btn-hide<%= f.id %>" class="pull-right btn btn-link btn-ar"><i class="glyphicon glyphicon-chevron-up"></i></button>
 						</div>
 						<div class="panel-body" id="pcont<%= f.id %>">
 							<%= f.answer %>
@@ -460,6 +461,7 @@
 							});
 						</script>
 
+					</div>
 							<% end %>
 				</div>
 			</div>
