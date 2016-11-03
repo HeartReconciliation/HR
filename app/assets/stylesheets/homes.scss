@@ -69,32 +69,36 @@
 
 .login-btn{
   color: black !important;
-  font-weight: bold;
 }
 
 .l-nav{
-padding-left: 30% !important;
-width: 72%;
+padding-left: 28% !important;
+width: 85%;
+font-size: 18px;
 }
-
+.nr{
+  position: absolute !important;
+  right:20px;
+  font-size: 18px;
+}
 .l-nav li{
 padding-right: 5%;
 }
 
 .baj-img{
   position: absolute;
-  width: 15%;
+  width: 170px;
+  top: 6px;
 }
-.custom-nav{
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  margin-top: 40px;
-}
+// .custom-nav{
+//   background: transparent !important;
+//   border: none !important;
+//   box-shadow: none !important;
+//   margin-top: 40px;
+// }
 
 .l-nav li a{
   color: black !important;
-  font-weight: bold;
 }
 
 
@@ -178,6 +182,53 @@ transition: .3s background;
 /***************************/
 
 /*Media Queries*/
+@media (max-width:1440px) and (min-width:1280px)
+{
+  .l-nav{
+    padding-left: 22% !important;
+    font-size: 16px;
+  }
+  .l-nav li{
+  padding-right: 4%;
+  }
+  .nr{
+    font-size: 16px;
+  }
+}
+@media(max-width:1280px)
+{
+  .l-nav{
+    padding-left: 20% !important;
+    font-size: 16px;
+  }
+  .l-nav li{
+  padding-right: 0;
+  }
+  .nr{
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .l-nav{
+    padding-left: 12% !important;
+    font-size: 12px;
+  }
+  .l-nav li{
+  padding-right: 0;
+  }
+  .nr{
+    font-size: 12px;
+  }
+  .baj-img{
+    position: absolute;
+    width: 110px;
+    top: 10px;
+  }
+  .get-btn{
+    font-size: 10px !important;
+  }
+}
 @media (min-width: 768px) {
   .pull-r{
     position: initial;
@@ -201,10 +252,10 @@ transition: .3s background;
 .l-nav li{
   padding-right:0;
 }
-.l-nav{
-padding-left: 20% !important;
-width: 63%;
-}
+// .l-nav{
+// padding-left: 20% !important;
+// width: 63%;
+// }
 .tlt{
   line-height: 1;
   font-size: 20px;
@@ -220,17 +271,43 @@ width: 63%;
 }
 
 @media (max-width: 768px) {
+.l-nav{
+    padding-left: 8% !important;
+    font-weight: 200;
+    font-size: 25px;
+}
+.l-nav li{
+  border-bottom: 1px solid #e7e7e7;
+}
+.nr{
+  position: initial !important;
+  padding-left: 8% !important;
+  font-weight: 200;
+  font-size: 25px;
+}
+.get-btn{
+  border-radius: 0 !important;
+width: 180px;
+}
+
+.navhh{
+  background-color: white;
+}
 .baj-img{
-  width: 175px;
+    width: 175px;
+    position: absolute;
+    left: 50%;
+    margin-left: -110px !important;  /* 50% of your logo width */
+    display: block;
 }
 .bj-img{
   width: 300px !important;
   height: 300px !important;
 }
 .custom-nav{
-background: rgba(0, 0, 0, 0.13) !important;
+background: transparent !important;
 position: initial !important;
-margin: 0 !important; 
+margin: 0 !important;
 }
 
 .ci{
