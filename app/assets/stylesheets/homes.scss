@@ -1,7 +1,12 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body{
+  font-family: 'Gentium Book Basic', serif !important;
+}
+.ff{
+  font-family: 'Gentium Book Basic', serif !important;
+}
 /****************************/
 .navbar-toggle {
   border: none !important;
@@ -93,7 +98,7 @@
   color: white !important;
   border-radius: 100px !important;
   padding: 10px !important;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .get-btn:hover{
