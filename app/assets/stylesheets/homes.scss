@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/****************************/
 .navbar-toggle {
   border: none !important;
   background: transparent !important;
@@ -271,7 +272,7 @@ transition: .3s background;
 @media (max-width:768px) and (min-width:500px){
 .baj-img{
     top:5px;
-    width: 175px !important;
+    width: 120px !important;
 }
 }
 @media(max-width:500px)
