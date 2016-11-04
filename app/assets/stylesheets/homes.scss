@@ -1,11 +1,13 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body,h1,h2,h3,h4,h5{
-  font-family: 'Gentium Book Basic', serif !important;
-}
+body,
 .ff{
-  font-family: 'Gentium Book Basic', serif !important;
+  font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300 !important;
 }
 /****************************/
 .navbar-toggle {
@@ -131,6 +133,7 @@ padding-right: 5%;
 }
 .custom-nav{
   font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0 !important;
 }
 
 .l-nav li a{
@@ -342,7 +345,10 @@ width: 180px;
   height: 300px !important;
 }
 .custom-nav{
-background: transparent !important;
+  position: fixed !important;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 .ci{
