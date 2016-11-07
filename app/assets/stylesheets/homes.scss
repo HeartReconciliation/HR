@@ -1,6 +1,14 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: 'FuturaStd-Book';
+  src: url("../fonts/Futura Std Book.otf");
+  // src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+/***************************/
 body,
 .ff{
   font-family: 'Open Sans', sans-serif;
@@ -98,9 +106,9 @@ h1,h2,h3,h4,h5{
 .get-btn{
   background-color: #DA6E5B;
   color: white !important;
-  border-radius: 100px !important;
-  padding: 10px !important;
-  margin-top: 4px;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  margin-top: 10px;
 }
 
 .get-btn:hover{
@@ -113,17 +121,17 @@ h1,h2,h3,h4,h5{
 }
 
 .l-nav{
-padding-left: 28% !important;
+padding-left: 30% !important;
 width: 85%;
-font-size: 18px;
+font-size: 13px;
 }
 .nr{
   position: absolute !important;
   right:20px;
-  font-size: 18px;
+  font-size: 13px;
 }
 .l-nav li{
-padding-right: 5%;
+padding-right: 1%;
 }
 
 .baj-img{
@@ -132,8 +140,13 @@ padding-right: 5%;
   top: 6px;
 }
 .custom-nav{
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0 !important;
+      margin-bottom: 0 !important;
+      font-family: FuturaStd-Book,Futura,"Trebuchet MS",Arial,sans-serif;
+      color: #000;
+      font-size: 13px !important;
+      text-transform: uppercase;
+      text-shadow: none;
+      letter-spacing: .18em;
 }
 
 .l-nav li a{
@@ -225,39 +238,39 @@ transition: .3s background;
 {
   .l-nav{
     padding-left: 22% !important;
-    font-size: 16px;
+    font-size: 13px !important;
   }
-  .l-nav li{
-  padding-right: 4%;
-  }
+  // .l-nav li{
+  // padding-right: 4%;
+  // }
   .nr{
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 @media(max-width:1280px)
 {
   .l-nav{
     padding-left: 20% !important;
-    font-size: 16px;
+    font-size: 13px;
   }
   .l-nav li{
   padding-right: 0;
   }
   .nr{
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .l-nav{
     padding-left: 12% !important;
     font-size: 12px;
   }
-  .l-nav li{
-  padding-right: 0;
+  .l-nav li a{
+  padding-right: 0px !important;
   }
   .nr{
-    font-size: 12px;
+    font-size: 13px;
   }
   .baj-img{
     position: absolute;
@@ -266,6 +279,9 @@ transition: .3s background;
   }
   .get-btn{
     font-size: 10px !important;
+  }
+  .custom-nav{
+        letter-spacing: .09em;
   }
 }
 @media (min-width: 768px) {

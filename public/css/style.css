@@ -1,14 +1,4 @@
-/*
-///////////////////////////////////////////////////
 
-Project Name: Drag & Drop Cards by FREEHTML5.co
-Author: FREEHTML5.co
-Website: http://freehtml5.co
-URL: http://freehtml5.co/cards/drag-drop
-License: Creative Commons Attribution 3.0 License
-
-///////////////////////////////////////////////////
-*/
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -16,11 +6,11 @@ License: Creative Commons Attribution 3.0 License
   font-weight: normal;
   font-style: normal;
 }
-/*
-///////////////////////////////////////////////////
-1.0 BASE
-///////////////////////////////////////////////////
-*/
+
+
+
+
+
 html.mobile-menu-expanded {
   overflow: hidden;
 }
