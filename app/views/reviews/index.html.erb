@@ -1,8 +1,9 @@
 <%= render 'layouts/sidenav' %>
 <div class="main">
 	<%= link_to "Add Review", new_review_path, class: "btn btn-primary" %>
-	<br><br>
+	<br>
 <% @reviews.each do |r| %>
+<br><br>
 <div class="panel panel-default">
   <div class="panel-heading"><%= r.name %>
 		<% r.rating.times do  %>
@@ -13,5 +14,7 @@
     <%= r.review %>
   </div>
 </div>
+<%= link_to "Edit", edit_review_path(r), class: "btn btn-primary btn-sm" %>
+<%= link_to "Delete", r, method: :delete, class: "btn btn-danger btn-sm" %>
 <% end %>
 </div>

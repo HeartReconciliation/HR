@@ -329,7 +329,11 @@ transition: .3s background;
 .l-nav{
     padding-left: 8% !important;
     font-weight: 200;
-    font-size: 25px;
+    font-size: 20px;
+}
+.l-nav li a{
+padding-right: 0px !important;
+line-height: 1 !important;
 }
 .l-nav li{
   border-bottom: 1px solid #e7e7e7;
@@ -338,7 +342,7 @@ transition: .3s background;
   position: initial !important;
   padding-left: 8% !important;
   font-weight: 200;
-  font-size: 25px;
+  font-size: 20px;
 }
 .get-btn{
   border-radius: 0 !important;

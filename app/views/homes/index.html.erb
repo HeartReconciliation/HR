@@ -82,6 +82,28 @@
 				</div>
 			</div>
 		</nav> -->
+		<script type="text/javascript">
+		$(document).on('click', 'a[href^="#"]', function(e) {
+	// target element id
+	var id = $(this).attr('href');
+
+	// target element
+	var $id = $(id);
+	if ($id.length === 0) {
+			return;
+	}
+
+	// prevent standard hash navigation (avoid blinking in IE)
+	e.preventDefault();
+
+	// top position relative to the document
+	var pos = $(id).offset().top;
+
+	// animated top scrolling
+	$('body, html').animate({scrollTop: pos});
+});
+
+		</script>
 			<nav class="navbar navbar-default custom-nav">
 				<div class="container-fuild">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -197,7 +219,7 @@
 								<p class="tlt-3">
 									Your life is a tale of triumph through adversity, Just because your down doesn't mean you won't get up. Ben and Jess are here to help you find the path before you and pick you up to walk in it.
 								</p> -->
-									<script type="text/javascript">
+									<!-- <script type="text/javascript">
 										$('.tlt').textillate({
 											in: {
 												effect: 'rollIn'
@@ -213,7 +235,7 @@
 												effect: 'tada'
 											}
 										});
-									</script>
+									</script> -->
 								</div>
 							</div>
 						</div>
@@ -225,7 +247,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 text-center">
-							<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">About us</h2>
+							<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">ABOUT US</h2>
 						</div>
 					</div>
 					<div class="row pad">
@@ -342,10 +364,7 @@
 				<div class="container">
 					<div class="row p-b">
 						<div class="col-md-6 col-md-offset-3 text-center">
-							<img src="images/blog.png" alt="Blog" data-wow-duration="1s" data-wow-delay=".5s" style="width: 300px;">
-							<!-- <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Recent From Blog</h2>
-							<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. -->
-							<!-- </p> -->
+						<a href="#"><img src="images/blog.png" alt="Blog" data-wow-duration="1s" data-wow-delay=".5s" style="width: 300px;"></a>
 						</div>
 					</div>
 					<div class="row p-b">
@@ -439,7 +458,7 @@
 				<div class="container" style="z-index: 3; position: relative;">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-							<h2 class="fh5co-heading turnblack">How we help you</h2>
+							<h2 class="fh5co-heading turnblack">HOW WE HELP YOU?</h2>
 						</div>
 					</div>
 					<div class="row">
@@ -469,7 +488,7 @@
 				<div class="container">
 					<div class="row">
 						<div id="faq" class="col-md-6 col-md-offset-3 text-center">
-							<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Faq</h2>
+							<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">FAQ</h2>
 						</div>
 					</div>
 					<div class="row">
@@ -514,7 +533,7 @@
 				<div class="container" style="z-index: 3; position: relative;">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-							<h2 class="fh5co-heading turnblack">Why choose us</h2>
+							<h2 class="fh5co-heading turnblack">WHY CHOOSE US?</h2>
 						</div>
 					</div>
 					<div class="row">
