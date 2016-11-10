@@ -1,3 +1,23 @@
+.tabb{
+  text-align: center;
+}
+
+.tabb h3{
+  font-size: 2em;
+}
+.fqh{
+  background:rgb(40, 96, 144) !important;
+  color: white;
+}
+.fqh:hover{
+  // color: black;
+  background: rgba(40, 96, 144, 0.9) !important;
+  cursor: pointer;
+}
+/****************************/
+/*Navbar*/
+/****************************/
+
 /* remove outer padding */
 .main .row{
   padding: 0px;
