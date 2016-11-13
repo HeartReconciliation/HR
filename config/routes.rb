@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   get 'adminpanel/index'
   resources :reviews
   resources :faqs
