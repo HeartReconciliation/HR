@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin
 
   def index
     @reviews = Review.all
@@ -51,6 +52,12 @@ class ReviewsController < ApplicationController
   end
 
   private
+  def check_admin
+    if !current_user.admin
+      redirect_to root_path, notice: "Prohibited"
+    end
+  end
+
     def set_review
       @review = Review.find(params[:id])
     end

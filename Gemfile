@@ -25,6 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #N
 gem 'devise'
 gem 'toastr-rails'
+gem 'faker'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
+gem "paperclip", "~> 5.0.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

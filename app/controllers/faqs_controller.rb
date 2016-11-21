@@ -1,6 +1,6 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin
   # GET /faqs
   # GET /faqs.json
   def index
@@ -63,6 +63,11 @@ class FaqsController < ApplicationController
   end
 
   private
+  def check_admin
+    if !current_user.admin
+      redirect_to root_path, notice: "Prohibited"
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_faq
       @faq = Faq.find(params[:id])

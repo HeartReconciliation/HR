@@ -1,10 +1,16 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin,except: [:indexh]
+  skip_before_action :authenticate_user!, only: [:indexh]
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.paginate(page: params[:page], per_page: 10)
+  end
+
+  def indexh
+    @blogs = Blog.paginate(page: params[:page], per_page: 15)
   end
 
   # GET /blogs/1
@@ -62,6 +68,11 @@ class BlogsController < ApplicationController
   end
 
   private
+  def check_admin
+    if !current_user.admin
+      redirect_to root_path, notice: "Prohibited"
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
