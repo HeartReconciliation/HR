@@ -12,15 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title ,class: "control-label"%><br>
-    <%= f.text_field :title ,class: "form-control"%>
-  </div>
-  <div class="field">
-    <%= f.label :description ,class: "control-label"%><br>
-    <%= f.text_area :description ,class: "form-control"%>
+    <%= f.label :title,class: "control-label" %><br>
+    <%= f.text_field :title, class: "form-control" %>
   </div><br>
+  <div style="width=22em">
+    <%= image_tag @blog.avatar.url(:medium) %>
+  </div>
+   <%= f.file_field :avatar %>
+   <br>
+  <div class="field">
+    <%= f.label :description,class: "control-label" %><br>
+    <%= f.text_area :description,class: "form-control" %>
+  </div>
+  <br>
   <div class="actions">
-    <%= f.submit "Submit", class: "btn btn-success" %>
-    <br>
+    <%= f.submit %>
   </div>
 <% end %>

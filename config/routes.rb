@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'blog' => 'blogs#indexh'
+  get 'benblog' => 'blogs#indexh'
   resources :blogs
   get 'adminpanel/index'
   resources :reviews
