@@ -3,16 +3,16 @@
 
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="assets/css/animate.min.css" rel="stylesheet" />
-	<link href="assets/css/style.min.css" rel="stylesheet" />
-	<link href="assets/css/style-responsive.min.css" rel="stylesheet" />
-	<link href="assets/css/theme/default.css" id="theme" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../assets/css/animate.min.css" rel="stylesheet" />
+	<link href="../assets/css/style.min.css" rel="stylesheet" />
+	<link href="../assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="../assets/css/theme/default.css" id="theme" rel="stylesheet" />
 	<!-- ================== END BASE CSS STYLE ================== -->
 
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="assets/plugins/pace/pace.min.js"></script>
+	<script src="../assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 </head>
 <body>
@@ -57,7 +57,7 @@
 
     <!-- begin #page-title -->
     <div id="page-title" class="page-title has-bg">
-        <div class="bg-cover"><img src="assets/img/cover.jpg" alt="" /></div>
+        <div class="bg-cover"><img src="../assets/img/cover.jpg" alt="" /></div>
         <div class="container">
             <h1>Ben & Jess</h1>
         </div>
@@ -83,16 +83,20 @@
                         <!-- begin post-info -->
                         <div class="post-info">
                             <h4 class="post-title">
-                                <a href="post_detail.html"><%= b.title %></a>
+                                <%= link_to blog_path(b) do %>
+																<%= truncate(b.title,:lenght => 12) %>
+																<% end %>
                             </h4>
                             <div class="post-by">
                                 Posted By <a href="post_without_sidebar.html#">admin</a> <span class="divider">|</span><%= b.created_at.strftime("%A %b %d") %>
                             </div>
                             <div class="post-desc">
-                              <%= truncate(b.description,:length => 150+rand(5..150)) %>
+                              <%= truncate(b.description,:length => 100)%>
                             </div>
                             <div class="read-btn-container">
-                                <a href="post_detail.html">Read More <i class="fa fa-angle-double-right"></i></a>
+															<%= link_to blog_path(b) do %>
+															Read More <i class="fa fa-angle-double-right"></i>
+															<% end %>
                             </div>
                         </div>
                         <!-- end post-info -->
@@ -198,17 +202,17 @@
 </div>
 </div>
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>
-	<script src="assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
-	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<!--[if lt IE 9]>
-		<script src="assets/crossbrowserjs/html5shiv.js"></script>
-		<script src="assets/crossbrowserjs/respond.min.js"></script>
-		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+		<script src="../assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="../assets/crossbrowserjs/respond.min.js"></script>
+		<script src="../assets/crossbrowserjs/excanvas.min.js"></script>
 	<![endif]-->
-	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
-	<script src="assets/plugins/masonry/masonry.min.js"></script>
-	<script src="assets/js/apps.min.js"></script>
+	<script src="../assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="../assets/plugins/masonry/masonry.min.js"></script>
+	<script src="../assets/js/apps.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 
 	<script>

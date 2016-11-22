@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin,except: [:indexh]
-  skip_before_action :authenticate_user!, only: [:indexh]
+  before_action :check_admin,except: [:indexh,:show]
+  skip_before_action :authenticate_user!, only: [:indexh,:show]
 
   # GET /blogs
   # GET /blogs.json

@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+
+<!-- <p>
   <strong>Title:</strong>
   <%= @blog.title %>
 </p>
@@ -8,7 +8,158 @@
 <p>
   <strong>Description:</strong>
   <%= @blog.description %>
-</p>
+</p> -->
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<head>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../assets/css/animate.min.css" rel="stylesheet" />
+	<link href="../assets/css/style.min.css" rel="stylesheet" />
+	<link href="../assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="../assets/css/theme/default.css" id="theme" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="../assets/plugins/pace/pace.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <nav class="navbar navbar-default custom-nav">
+    <div class="container-fuild">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header navhh">
+        <button type="button"	id="nav-bt" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../images/baj.png" class="baj-img"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav l-nav" id="scr">
+        </ul>
+        <ul class="nav navbar-nav navbar-right nr">
+          <li><%= link_to "Home", root_path%></li>
+          <% if user_signed_in? %>
+          <li><%= link_to "Log Out",destroy_user_session_path,class: "login-btn",method: :delete%></li>
+          <li>
+            <a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn get-btn">Book appointment</a>
+          </li>
+        <% else %>
+          <li><%= link_to "Login",new_user_session_path, class:"login-btn"%></li>
+          <li>
+            <a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn get-btn">Book appointment</a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+    <!-- begin #content -->
+    <div id="content" class="content">
+        <!-- begin container -->
+        <div class="container">
+            <!-- begin row -->
+            <div class="row row-space-30">
+                <!-- begin col-9 -->
+                <div class="col-md-9">
+                    <!-- begin post-detail -->
+                    <div class="post-detail section-container">
+                        <ul class="breadcrumb">
+                            <li><%= link_to "Home", benblog_path%></li>
+                            <li class="active"><%= @blog.title %></li>
+                        </ul>
+                        <h4 class="post-title">
+                            <%= link_to blog_path(@blog) do%>
+                            <%= @blog.title %>
+                            <% end %>
+                        </h4>
+                        <div class="post-by">
+                            Posted By <a href="post_detail.html#">admin</a> <span class="divider">|</span> <%= @blog.created_at.strftime("%A %b %d") %>
+                        </div>
+                        <!-- begin post-image -->
+                        <div class="post-image">
+                            <%= image_tag @blog.avatar.url %>
+                        </div>
+                        <!-- end post-image -->
+                        <!-- begin post-desc -->
+                        <div class="post-desc">
+                            <p>
+                                <%= @blog.description %>
+                            </p>
+                        </div>
+                        <!-- end post-desc -->
+                        <!-- begin post-image -->
+                    </div>
+                    <!-- end post-detail -->
+                </div>
+
+                <!-- end col-9 -->
+                <!-- begin col-3 -->
+                <div class="col-md-3">
+                    <!-- begin section-container -->
+                    <div class="section-container">
+                        <h4 class="section-title"><span>Recent Post</span></h4>
+                        <ul class="sidebar-recent-post">
+                          <% Blog.last(5).each do |b| %>
+                            <li>
+                                <div class="info">
+                                    <h4 class="title"><%= link_to blog_path(b) do%>
+                                      <%= b.title %>
+                                      <% end %>
+                                    </h4>
+                                    <div class="date"><%= b.created_at.strftime("%A %b %d") %></div>
+                                </div>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                    <!-- end section-container -->
+                </div>
+                <!-- end col-3 -->
+            </div>
+            <div class="fb-comments" data-href="http://heartr.herokuapp.com/blogs/<%= @blog.id %>" data-numposts="5"></div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end #content -->
+
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="../assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="../assets/crossbrowserjs/respond.min.js"></script>
+		<script src="../assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="../assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="../assets/js/apps.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
+
+	<script>
+	    $(document).ready(function() {
+	        App.init();
+	    });
+	</script>
+</body>
