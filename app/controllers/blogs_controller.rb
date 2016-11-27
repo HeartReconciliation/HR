@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def indexh
-    @blogs = Blog.paginate(page: params[:page], per_page: 15)
+    @blogs = Blog.paginate(page: params[:page], per_page: 15).order('created_at DESC')
   end
 
   # GET /blogs/1

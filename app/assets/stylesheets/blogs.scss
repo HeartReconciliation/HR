@@ -5,7 +5,80 @@
   padding: 4px !important;
   margin-top: 10px;
 }
-#bgvid{
-  position: absolute;
-  width: 100%;
+.sec-title{
+  font-size: 14px;
+margin: 0 0 10px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: .5px;
+position: relative;
+color: #333;
+text-align: center;
+}
+
+.sec-title span{
+  position: relative;
+    z-index: 1020;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.r-title{
+  font-size: 0.9em;
+}
+
+.r-date{
+    color: grey;
+    font-size: 0.7em;
+}
+
+.sec-title:before{
+  content: '';
+position: absolute;
+left: 0;
+right: 0;
+height: 2px;
+background: #222;
+top: 50%;
+margin-top: -1px;
+z-index: 0;
+}
+// #bgvid{
+//   position: absolute;
+//   width: 100%;
+// }
+
+.bl-ul{
+    list-style-type: none;
+    padding: 0 !important;
+}
+
+.bl-ul li a{
+  color: black;
+}
+.bdb{
+  background-color: white !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+// .jmb-p{
+// font-family: 'Satisfy', cursive;
+// }
+
+#jmb{
+  background: url(../images/heart2.jpg);
+  height: 400px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -150px;
+  // background-position-y:-148px;
+}
+
+@media (max-width: 768px) {
+  #jmb{
+    background-position: center center;
+      height: 22vh;
+  }
 }

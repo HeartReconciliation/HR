@@ -15,5 +15,7 @@
 <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-sm" %>
 <br><br>
     <% end %>
-    <%#= will_paginate ,class:"col-md-offset-5"%>
+    <div class="col-md-offset-5">
+      <%= will_paginate%>
+    </div>
 </div>

@@ -1,0 +1,81 @@
+<script type="text/javascript">
+$(document).on('click', 'a[href^="#"]', function(e) {
+// target element id
+var id = $(this).attr('href');
+
+// target element
+var $id = $(id);
+if ($id.length === 0) {
+  return;
+}
+
+// prevent standard hash navigation (avoid blinking in IE)
+e.preventDefault();
+
+// top position relative to the document
+var pos = $(id).offset().top;
+
+// animated top scrolling
+$('body, html').animate({scrollTop: pos});
+document.getElementById("nav-bt").click();
+});
+
+</script>
+  <nav class="navbar navbar-default custom-nav">
+    <div class="container-fuild">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header navhh">
+        <button type="button"	id="nav-bt" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="images/baj.png" class="baj-img"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav l-nav" id="scr">
+          <li>
+            <a href="#Hr">Heart Reconcilation</a>
+          </li>
+          <li>
+            <a href="#about-us">About Us</a>
+          </li>
+          <li>
+            <a href="#testimonial">Testimonials</a>
+          </li>
+          <li>
+            <a href="#blog">Blog</a>
+          </li>
+          <% if user_signed_in? %>
+          <% if current_user.admin %>
+          <li><%= link_to "Admin",adminpanel_index_path%></li>
+        <% else %>
+          <li>
+            <a href="#faq">FAQ</a>
+          </li>
+          <% end %>
+          <% else %>
+          <li><a href="#faq">FAQ</a></li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right nr">
+          <% if user_signed_in? %>
+          <li><%= link_to "Log Out",destroy_user_session_path,class: "login-btn",method: :delete%></li>
+          <li>
+            <a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn get-btn">Book appointment</a>
+          </li>
+        <% else %>
+          <li><%= link_to "Login",new_user_session_path, class:"login-btn"%></li>
+          <li>
+            <a href="https://benandjess.acuityscheduling.com/schedule.php" class="btn get-btn">Book appointment</a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
