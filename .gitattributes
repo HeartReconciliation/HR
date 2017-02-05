@@ -1,2 +1,2 @@
 public/* linguist-vendored
-*.html linguist-language=ruby
+*.html.erb linguist-language=ruby
